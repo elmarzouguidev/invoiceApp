@@ -7,7 +7,7 @@ trait DocumentNumerotator
  
     public function getNextDocumentNumberNormal(string $for): string
     {
-        if (in_array($for, ['estimate', 'invoice', 'bcommand', 'blivraison', 'transaction', 'invoice_avoir', 'compte'])) {
+        if (in_array($for, ['estimate', 'invoice','transaction','compte'])) {
             $startColumn = $for . '_start';
             $prefixColumn = $for . '_prefix';
             $digitColumn = $for . '_digit';
