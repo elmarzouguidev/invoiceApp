@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             UserSeeder::class
         ]);
+
+        if (app()->environment(['local'])) {
+            \App\Models\CRM\Customer::factory(6)->create();
+        }
     }
 }

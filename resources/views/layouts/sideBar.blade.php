@@ -3,17 +3,15 @@
     <div class="sidepanel-inner d-flex flex-column">
         <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
         <div class="app-branding">
-            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="{{asset('assets/images/app-logo.svg')}}"
-                    alt="logo"><span class="logo-text">InvoiceApp</span></a>
-
+            <a class="app-logo" href="{{ route('admin:home') }}"><img class="logo-icon me-2"
+                    src="{{ asset('assets/images/app-logo.svg') }}" alt="logo"><span
+                    class="logo-text">InvoiceApp</span></a>
         </div>
-        <!--//app-branding-->
 
         <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
             <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                 <li class="nav-item">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link active" href="index.html">
+                    <a class="nav-link active" href="{{ route('admin:home') }}">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -22,14 +20,11 @@
                                 <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                             </svg>
                         </span>
-                        <span class="nav-link-text">Overview</span>
+                        <span class="nav-link-text">Dashboard</span>
                     </a>
-                    <!--//nav-link-->
                 </li>
-                <!--//nav-item-->
                 <li class="nav-item">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="docs.html">
+                    <a class="nav-link" href="{{route('admin:customers.index')}}">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -39,13 +34,10 @@
                                     d="M13.81 4H2.19a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zM2.19 3A2 2 0 0 0 .198 5.181l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H2.19z" />
                             </svg>
                         </span>
-                        <span class="nav-link-text">Docs</span>
+                        <span class="nav-link-text">Clients</span>
                     </a>
-                    <!--//nav-link-->
                 </li>
-                <!--//nav-item-->
                 <li class="nav-item">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link" href="orders.html">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
@@ -61,15 +53,11 @@
                         </span>
                         <span class="nav-link-text">Orders</span>
                     </a>
-                    <!--//nav-link-->
                 </li>
-                <!--//nav-item-->
                 <li class="nav-item has-submenu">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
                         data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
                         <span class="nav-icon">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -86,9 +74,7 @@
                                     d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </span>
-                        <!--//submenu-arrow-->
                     </a>
-                    <!--//nav-link-->
                     <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link"
@@ -100,13 +86,10 @@
                         </ul>
                     </div>
                 </li>
-                <!--//nav-item-->
                 <li class="nav-item has-submenu">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
                         data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
                         <span class="nav-icon">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -121,9 +104,7 @@
                                     d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </span>
-                        <!--//submenu-arrow-->
                     </a>
-                    <!--//nav-link-->
                     <div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link" href="login.html">Login</a></li>
@@ -136,11 +117,8 @@
                         </ul>
                     </div>
                 </li>
-                <!--//nav-item-->
-
 
                 <li class="nav-item">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link" href="charts.html">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-line"
@@ -151,12 +129,9 @@
                         </span>
                         <span class="nav-link-text">Charts</span>
                     </a>
-                    <!--//nav-link-->
                 </li>
-                <!--//nav-item-->
 
                 <li class="nav-item">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link" href="help.html">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle"
@@ -169,18 +144,13 @@
                         </span>
                         <span class="nav-link-text">Help</span>
                     </a>
-                    <!--//nav-link-->
                 </li>
-                <!--//nav-item-->
             </ul>
-            <!--//app-menu-->
         </nav>
-        <!--//app-nav-->
         <div class="app-sidepanel-footer">
             <nav class="app-nav app-nav-footer">
                 <ul class="app-menu footer-menu list-unstyled">
                     <li class="nav-item">
-                        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                         <a class="nav-link" href="settings.html">
                             <span class="nav-icon">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear"
@@ -193,11 +163,8 @@
                             </span>
                             <span class="nav-link-text">Settings</span>
                         </a>
-                        <!--//nav-link-->
                     </li>
-                    <!--//nav-item-->
                     <li class="nav-item">
-                        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                         <a class="nav-link"
                             href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">
                             <span class="nav-icon">
@@ -211,11 +178,8 @@
                             </span>
                             <span class="nav-link-text">Download</span>
                         </a>
-                        <!--//nav-link-->
                     </li>
-                    <!--//nav-item-->
                     <li class="nav-item">
-                        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                         <a class="nav-link"
                             href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">
                             <span class="nav-icon">
@@ -228,15 +192,9 @@
                             </span>
                             <span class="nav-link-text">License</span>
                         </a>
-                        <!--//nav-link-->
                     </li>
-                    <!--//nav-item-->
                 </ul>
-                <!--//footer-menu-->
             </nav>
         </div>
-        <!--//app-sidepanel-footer-->
-
     </div>
-    <!--//sidepanel-inner-->
 </div>

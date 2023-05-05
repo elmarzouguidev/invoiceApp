@@ -22,6 +22,7 @@ class Customer extends Model
      * @var string[]|array<int,string>
      */
     protected $fillable = [
+        'id',
         'uuid',
         'code',
         'name',
@@ -49,4 +50,9 @@ class Customer extends Model
         return $this->belongsTo(Category::class);
     }
     // Helper Methods
+
+    public function scopeList($query)
+    {
+        return $query->select($this->fillable);
+    }
 }
