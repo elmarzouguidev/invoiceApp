@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Traits\UuidGenerator;
 use App\Traits\GetModelByUuid;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Estimate extends Model
 {
@@ -47,6 +48,11 @@ class Estimate extends Model
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
+    }
+
+    public function articles(): MorphMany
+    {
+        return $this->morphMany(Article::class, 'articleable')->orderBy('position');
     }
 
     // Helper Methods

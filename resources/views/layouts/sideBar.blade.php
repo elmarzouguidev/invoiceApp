@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin:customers.index')}}">
+                    <a class="nav-link" href="{{ route('admin:customers.index') }}">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="orders.html">
+                    <a class="nav-link" href="{{ route('admin:estimates.index') }}">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="orders.html">
+                    <a class="nav-link" href="{{ route('admin:invoices.index') }}">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
