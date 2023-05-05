@@ -17,14 +17,37 @@
                     <tbody>
                         @foreach ($customers as $customer)
                             <tr>
-                                <td class="cell">{{$customer->code}}</td>
-                                <td class="cell"><span class="truncate">{{$customer->name}}</span></td>
-                                <td class="cell">{{$customer->telephone}}</td>
-                                <td class="cell">{{$customer->email}}</td>
-                                <td class="cell">{{$customer->ice}}</td>
-                                <td class="cell">{{$customer->rc}}</td>
-                                <td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+                                <td class="cell">{{ $customer->code }}</td>
+                                <td class="cell"><span class="truncate">{{ $customer->name }}</span></td>
+                                <td class="cell">{{ $customer->telephone }}</td>
+                                <td class="cell">{{ $customer->email }}</td>
+                                <td class="cell">{{ $customer->ice }}</td>
+                                <td class="cell">{{ $customer->rc }}</td>
+                                <td class="cell">
+                                    <a class="btn-sm app-btn-secondary"
+                                        href="{{ route('admin:customers.edit', $customer->uuid) }}">
+                                        Edit
+                                    </a>
+                                </td>
+                                <td class="cell">
+                                    <a class="btn-sm app-btn-danger" href=""
+                                        onclick="
+                                        var result = confirm('Are you sure you want to delete this customer ?');
+
+                                        if(result){
+                                            event.preventDefault();
+                                            document.getElementById('delete-customer-{{ $customer->uuid }}').submit();
+                                        }">
+                                        Supprimer
+                                    </a>
+                                </td>
                             </tr>
+                            <form id="delete-customer-{{ $customer->uuid }}" method="post"
+                                action="{{ route('admin:customers.delete') }}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="customerId" value="{{ $customer->uuid }}">
+                            </form>
                         @endforeach
                     </tbody>
                 </table>

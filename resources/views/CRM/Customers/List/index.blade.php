@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container-xl">
-
+        @include('layouts.parts.__messages')
+        
         @include('CRM.Customers.List.__section_a_filters')
 
         @include('CRM.Customers.List.__section_b_nav')

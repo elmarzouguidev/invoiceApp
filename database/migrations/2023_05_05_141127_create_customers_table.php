@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->string('rc', 70)->unique()->nullable();
             $table->string('ice', 90)->unique()->nullable();
-
+            $table->string('contact', 100);
             $table->string('email')->nullable()->unique();
             $table->string('telephone', 100)->nullable()->unique();
             $table->longText('address')->nullable();

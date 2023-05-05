@@ -28,6 +28,7 @@ class Customer extends Model
         'name',
         'rc',
         'ice',
+        'contact',
         'email',
         'telephone',
         'details',
@@ -54,5 +55,10 @@ class Customer extends Model
     public function scopeList($query)
     {
         return $query->select($this->fillable);
+    }
+
+    public function scopeFindUuid($query, $uuid)
+    {
+        return $query->whereUuid($uuid);
     }
 }

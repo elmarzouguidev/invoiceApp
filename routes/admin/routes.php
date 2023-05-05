@@ -13,6 +13,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'customers'], function () {
     Route::get('/', [CustomerController::class, 'index'])->name('customers.index');
+    Route::delete('/', [CustomerController::class, 'delete'])->name('customers.delete');
 
     Route::get('/create', [CustomerController::class, 'create'])->name('customers.create');
     Route::post('/create', [CustomerController::class, 'store'])->name('customers.store');
