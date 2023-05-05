@@ -52,6 +52,7 @@ class CustomerController extends Controller
     public function update(CustomerUpdateFormRequest $request, Customer $customer)
     {
         DB::beginTransaction();
+        
         try {
 
             Customer::findUuid($customer->uuid)->update($request->validated());

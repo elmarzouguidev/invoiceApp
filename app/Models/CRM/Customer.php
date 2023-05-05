@@ -61,4 +61,17 @@ class Customer extends Model
     {
         return $query->whereUuid($uuid);
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        $prefixer = config('invoice-app.clients.prefix');
+
+        static::creating(function ($model) use ($prefixer) {
+            $number = (self::max('id') + 1);
+
+            $model->code = $prefixer . str_pad("$number", 4, "0", STR_PAD_LEFT);
+        });
+    }
 }
