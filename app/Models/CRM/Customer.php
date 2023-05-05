@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace App\Models\CRM;
 
+use App\Models\Finance\Estimate;
+use App\Models\Finance\Invoice;
 use App\Models\Utilities\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UuidGenerator;
 use App\Traits\GetModelByUuid;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Model
 {
@@ -49,6 +52,15 @@ class Customer extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function estimates(): HasMany
+    {
+        return $this->hasMany(Estimate::class);
+    }
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(Invoice::class);
     }
     // Helper Methods
 
