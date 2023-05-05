@@ -7,6 +7,7 @@
                         <tr>
                             <th class="cell">REF</th>
                             <th class="cell">Raison sociale</th>
+                            <th class="cell">Contact</th>
                             <th class="cell">Télephone</th>
                             <th class="cell">E-mail</th>
                             <th class="cell">I.C.E</th>
@@ -19,6 +20,7 @@
                             <tr>
                                 <td class="cell">{{ $customer->code }}</td>
                                 <td class="cell"><span class="truncate">{{ $customer->name }}</span></td>
+                                <td class="cell">{{ $customer->contact }}</td>
                                 <td class="cell">{{ $customer->telephone }}</td>
                                 <td class="cell">{{ $customer->email }}</td>
                                 <td class="cell">{{ $customer->ice }}</td>
