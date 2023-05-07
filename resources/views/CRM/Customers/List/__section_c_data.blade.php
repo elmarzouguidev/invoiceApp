@@ -32,7 +32,7 @@
                                     </a>
                                 </td>
                                 <td class="cell">
-                                    <a class="btn-sm app-btn-danger" href=""
+                                    <a class="btn-sm app-btn-danger" href="#"
                                         onclick="
                                         var result = confirm('Are you sure you want to delete this customer ?');
 
