@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UuidGenerator;
 use App\Traits\GetModelByUuid;
+use App\Traits\PricesTrait;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
@@ -17,6 +18,7 @@ class Invoice extends Model
     use HasFactory;
     use UuidGenerator;
     use GetModelByUuid;
+    use PricesTrait;
 
 
     /**
@@ -26,9 +28,7 @@ class Invoice extends Model
         'uuid',
         'document_number',
         'status',
-        'price_ht',
-        'price_total',
-        'price_remise',
+        'total_price',
         'is_send',
         'is_active',
         'due_date',
@@ -42,6 +42,7 @@ class Invoice extends Model
      */
     protected $casts = [
         'is_active' => 'boolean',
+        'total_price' => 'float'
     ];
 
     // Relationships
@@ -55,4 +56,9 @@ class Invoice extends Model
         return $this->morphMany(Article::class, 'articleable')->orderBy('position');
     }
     // Helper Methods
+
+    public function scopeList($query)
+    {
+        return $query->select(['id', 'uuid', 'document_date', 'due_date', 'price_total', 'customer_id']);
+    }
 }

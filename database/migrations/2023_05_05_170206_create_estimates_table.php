@@ -23,16 +23,13 @@ return new class extends Migration
 
             $table->unsignedInteger('status')->default(0);
 
-            $table->decimal('price_ht', 12, 2)->default(0);
-            $table->decimal('price_total', 12, 2)->default(0);
-            $table->decimal('price_tax', 12, 2)->default(0);
-            $table->decimal('price_remise', 12, 2)->default(0);
+            $table->decimal('total_price', 13, 2)->default(0)->nullable();
 
             $table->date('document_date')->nullable();
             $table->date('due_date')->nullable();
 
             $table->longText('notes')->nullable();
-            
+
             $table->boolean('is_invoiced')->default(false);
             $table->boolean('is_send')->default(false);
             $table->boolean('is_active')->default(true);

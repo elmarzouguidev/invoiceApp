@@ -15,17 +15,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('invoices', function (Blueprint $table) {
+            $table->id();
+            $table->uuid();
+            
             $table->foreignIdFor(Customer::class)->nullable()->index()->constrained()->nullOnDelete();
 
             $table->string('document_number')->unique()->nullable();
 
             $table->unsignedInteger('status')->default(0);
 
-            $table->decimal('price_ht', 12, 2)->default(0);
-            $table->decimal('price_total', 12, 2)->default(0);
-            $table->decimal('price_tax', 12, 2)->default(0);
-            $table->decimal('price_remise', 12, 2)->default(0);
-
+            $table->decimal('total_price', 13, 2)->default(0)->nullable();
+ 
             $table->date('document_date')->nullable();
             $table->date('due_date')->nullable();
 

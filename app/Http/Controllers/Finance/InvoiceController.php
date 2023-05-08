@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
+use App\Models\Finance\Invoice;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -13,6 +14,8 @@ class InvoiceController extends Controller
 
     public function index()
     {
-        return view('Finance.Invoice.index');
+        $invoices = Invoice::list()->with('customer:id,name')->get();
+
+        return view('Finance.Invoice.List.index', compact('invoices'));
     }
 }
