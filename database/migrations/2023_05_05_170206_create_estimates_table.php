@@ -31,14 +31,10 @@ return new class extends Migration
             $table->date('document_date')->nullable();
             $table->date('due_date')->nullable();
 
+            $table->longText('notes')->nullable();
+            
             $table->boolean('is_invoiced')->default(false);
             $table->boolean('is_send')->default(false);
-
-            $table->boolean('is_valid')->default(false);
-            $table->boolean('is_active')->default(true);
-
-            $table->longText('notes')->nullable();
-
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);
             

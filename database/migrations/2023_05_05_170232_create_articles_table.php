@@ -16,21 +16,15 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->unsignedBigInteger('position')->default(0);
-
             $table->morphs('articleable');
+
+            $table->unsignedBigInteger('position')->default(0);
 
             $table->longText('designation')->nullable();
             $table->longText('description')->nullable();
             $table->unsignedBigInteger('quantity')->default(0);
-
-            $table->decimal('prix_unitaire', 12, 2)->default(0);
-            $table->decimal('montant_ht', 12, 2)->default(0);
-            $table->decimal('montant_remise', 12, 2)->default(0);
-            $table->decimal('montant_tax', 12, 2)->default(0);
-            $table->decimal('montant_ttc', 12, 2)->default(0);
-            $table->unsignedBigInteger('remise')->default(0);
-            $table->unsignedBigInteger('tax')->default(0);
+            $table->decimal('unit_price', 13, 2)->default(0);
+            $table->decimal('total_price', 13, 2)->default(0);
         });
     }
 
